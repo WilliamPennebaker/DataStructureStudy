@@ -2,9 +2,13 @@
 
 ## Overview
 
-After starting to mess with some leetcode problems I realized that using brute force to solve the problem isn't going to be extremely helpful however, it is still a solution. A good general thought is how can I make this solution better (time complexity speaking or code wise I suppose). So, I decided to start this project to give a better understanding of what is available to me after taking data structures and algorithm classes at my university. Those classes will only get you so far and it is ultimately up to you to progress that knowledge into something better.
+After starting to mess with some leetcode problems I realized that using brute force to solve the problem isn't going to be extremely helpful however, it is still a solution. A good general thought is how can I make this solution better (time complexity speaking or code wise I suppose). 
 
-This project is a collection of the data structures, sorting methods and some notes that I have taking while studying for these solutions. Note that this will just be Java, I currently don't have plans to expand this to C/C++ or python or another programming language for that matter. Regardless of what programming language I use or decide to include into this project inteviewers aren't going to care what language you're using on an interview. What they care about is if you can produce a solution (results) and if it is the most efficient solution you can think of. (If it isn't think of one and/or ask them if they were to have a more efficient solution that they could teach you. It does show that you're willing to learn from them.) - Just remember that this may not always be the case and we can never assume!
+So, I decided to start this project to give a better understanding of what is available to me after taking data structures and algorithm classes at my university. Those classes will only get you so far and it is ultimately up to you to progress that knowledge into something better.
+
+This project is a collection of the data structures, sorting methods and some notes that I have taking while studying for these solutions. Note that this will just be Java, I currently don't have plans to expand this to C/C++ or python or another programming language for that matter. 
+
+Regardless of what programming language I use or decide to include into this project inteviewers aren't going to care what language you're using on an interview. What they care about is if you can produce a solution (results) and if it is the most efficient solution you can think of. (If it isn't think of one and/or ask them if they were to have a more efficient solution that they could teach you. It does show that you're willing to learn from them.) - Just remember that this may not always be the case and we can never assume!
 
 I decided to have this as public on github to be used as a resource, not only for me but if someone else stubbles upon this on the massive world of the internet. Hopefully this will be helpful to YOU who is reading this!
 
