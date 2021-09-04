@@ -37,11 +37,16 @@ Note: I will have comments and possibly extra note files explaining the time com
 
 Some of the links used to code this and work out why some time complextities are the way they are and if there is a more efficient way to a solution.
 https://www.interviewcake.com/data-structures-reference
+
 https://stackabuse.com/sorting-algorithms-in-java/
+
 https://www.geeksforgeeks.org/
+
 https://www.mygreatlearning.com/blog/data-structures-using-java/
 
+
 This is a website hosted on github that I came across showing the time complexity for different algorithms/data structures and growth rates.
+
 http://cooervo.github.io/Algorithms-DataStructures-BigONotation/
 
 ## Folder Structure
