@@ -145,16 +145,133 @@ public class ArraySorts {
      * Merge Sort Method
      * 
      */
+    public static void mergeSort(int[] arr, int left, int right) {
+        if (right <= left) return;
+        int mid = (left+right)/2;
+        mergeSort(arr, left, mid);
+        mergeSort(arr, mid+1, right);
+        merge(arr, left, mid, right);
+    }
 
+    public static void merge(int[] arr, int left, int mid, int right) {
+        // calculating lengths
+        int lengthLeft = mid - left + 1;
+        int lengthRight = right - mid;
+    
+        // creating temporary subarrays
+        int leftarr[] = new int [lengthLeft];
+        int rightarr[] = new int [lengthRight];
+    
+        // copying our sorted subarrays into temporaries
+        for (int i = 0; i < lengthLeft; i++)
+            leftarr[i] = arr[left+i];
+        for (int i = 0; i < lengthRight; i++)
+            rightarr[i] = arr[mid+i+1];
+    
+        // iterators containing current index of temp subarrays
+        int leftIndex = 0;
+        int rightIndex = 0;
+    
+        // copying from leftArray and rightArray back into array
+        for (int i = left; i < right + 1; i++) {
+            // if there are still uncopied elements in R and L, copy minimum of the two
+            if (leftIndex < lengthLeft && rightIndex < lengthRight) {
+                if (leftarr[leftIndex] < rightarr[rightIndex]) {
+                    arr[i] = leftarr[leftIndex];
+                    leftIndex++;
+                }
+                else {
+                    arr[i] = rightarr[rightIndex];
+                    rightIndex++;
+                }
+            }
+            // if all the elements have been copied from rightArray, copy the rest of leftArray
+            else if (leftIndex < lengthLeft) {
+                arr[i] = leftarr[leftIndex];
+                leftIndex++;
+            }
+            // if all the elements have been copied from leftArray, copy the rest of rightArray
+            else if (rightIndex < lengthRight) {
+                arr[i] = rightarr[rightIndex];
+                rightIndex++;
+            }
+        }
+    }
     /**
      * Quick Sort Method
      * 
      */
-
+    public static int partition(int[] arr, int begin, int end) {
+        int pivot = end;
+    
+        int counter = begin;
+        for (int i = begin; i < end; i++) {
+            if (arr[i] < arr[pivot]) {
+                int temp = arr[counter];
+                arr[counter] = arr[i];
+                arr[i] = temp;
+                counter++;
+            }
+        }
+        int temp = arr[pivot];
+        arr[pivot] = arr[counter];
+        arr[counter] = temp;
+    
+        return counter;
+    }
+    
+    public static void quickSort(int[] arr, int begin, int end) {
+        if (end <= begin) return;
+        int pivot = partition(arr, begin, end);
+        quickSort(arr, begin, pivot-1);
+        quickSort(arr, pivot+1, end);
+    }
+     
     /**
      * Heap Sort Method
      * 
      */
+    public static void heapify(int[] arr, int length, int i) {
+        int leftChild = 2*i+1;
+        int rightChild = 2*i+2;
+        int largest = i;
+    
+        // if the left child is larger than parent
+        if (leftChild < length && arr[leftChild] > arr[largest]) {
+            largest = leftChild;
+        }
+    
+        // if the right child is larger than parent
+        if (rightChild < length && arr[rightChild] > arr[largest]) {
+            largest = rightChild;
+        }
+    
+        // if a swap needs to occur
+        if (largest != i) {
+            int temp = arr[i];
+            arr[i] = arr[largest];
+            arr[largest] = temp;
+            heapify(arr, length, largest);
+        }
+    }
+    
+    public static void heapSort(int[] arr) {
+        if (arr.length == 0) return;
+    
+        // Building the heap
+        int length = arr.length;
+        // we're going from the first non-leaf to the root
+        for (int i = length / 2-1; i >= 0; i--)
+            heapify(arr, length, i);
+    
+        for (int i = length-1; i >= 0; i--) {
+            int temp = arr[0];
+            arr[0] = arr[i];
+            arr[i] = temp;
+    
+            heapify(arr, i, 0);
+        }
+    }
 
     /**
      * 
